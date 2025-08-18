@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Realistic Coin Flip</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding-top: 50px;
+        }
+
+        .coin {
+            width: 150px;
+            height: 150px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease-out;
+            margin: 20px auto;
+        }
+
+        .side {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 50%;
+        }
+
+        .heads {
+            background: url('https://flipacointool.com/wp-content/uploads/2024/12/flip-a-indian-coin-heads-3d.png') no-repeat center/cover; /* Heads image */
+        }
+
+        .tails {
+            background: url('https://www.shutterstock.com/shutterstock/photos/2186383157/display_1500/stock-vector-reverse-of-new-indian-ten-rupee-coin-golden-silver-coated-isolated-on-white-background-in-vector-2186383157.jpg') no-repeat center/cover; /* Tails image */
+            transform: rotateY(180deg);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+        }
+
+        #result {
+            font-size: 24px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Realistic Coin Flip</h1>
+    <div class="coin" id="coin">
+        <div class="side heads"></div>
+        <div class="side tails"></div>
+    </div>
+    <button onclick="flipCoin()">Flip!</button>
+    <p id="result"></p>
+
+    <script>
+        function flipCoin() {
+            let coin = document.getElementById("coin");
+            let resultText = document.getElementById("result");
+
+            resultText.textContent = "";
+
+            // Generate a random number of spins (to make it more realistic)
+            let spins = Math.floor(Math.random() * 4) + 3; // 3 to 6 spins
+            // let spins = 6
+
+            // Randomly decide Heads or Tails
+            let isHeads = Math.random() < 0.5;
+
+            // Final rotation: multiple full spins + either 0deg (Heads) or 180deg (Tails)
+            let finalRotation = spins * 360 + (isHeads ? 0 : 180);
+
+            // Apply rotation
+            coin.style.transform = `rotateY(${finalRotation}deg)`;
+
+            // Show result after animation ends
+            setTimeout(() => {
+                resultText.textContent = isHeads ? "Heads 🎯" : "Tails 🎯";
+            }, 1000); // match transition time
+        }
+    </script>
+
+</body>
+</html>
