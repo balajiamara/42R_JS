@@ -30,6 +30,7 @@ listContainer.addEventListener('click', function(e){
     }
 }, false);
 
+// local storage function to set
 function saveData(){
     localStorage.setItem('data', listContainer.innerHTML);
 }
