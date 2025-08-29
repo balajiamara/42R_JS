@@ -24,4 +24,10 @@
 // console.log(toBoolean(0));        // false
 // console.log(toBoolean(1)); 
 
-console.log(Boolean('0'))
+// console.log(Boolean('0'))
+
+let a=20
+let b='30'
+
+console.log(a+b)
+console.log(b+a)
