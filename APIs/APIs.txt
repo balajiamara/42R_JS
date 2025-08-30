@@ -1,0 +1,15 @@
+Task for Today:
+Fetch records from any public API (for example: JSONPlaceholder or GoRest or FakeStore API)
+
+Select at least 2 fields from the response.
+Display those fields clearly on the UI (in a list, table, or cards).
+
+Example:
+From jsonplaceholder users API → show name and email.
+From fakestoreapi products API → show title and price.
+From gorest    users API ->show name and email
+
+resources :
+https://jsonplaceholder.typicode.com/todos/
+https://fakestoreapi.in/api/products
+https://gorest.co.in/public/v2/users 
