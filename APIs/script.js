@@ -56,7 +56,27 @@
 
 
 
+// HOW TO PATCH(CHANGE MULTIPLE DATA ONCE) DATA IN API
 
+// let user3={
+//   name:'Hardik Pandya',
+//   email:'hardik33@gmail.com',
+//   gender:'Male',
+//   status:'active'
+// }
+// fetch('https://gorest.co.in/public/v2/users/8096909',{
+//   method:'PATCH',     // IT IS USED TO UPDATE MULTIPLE FIELD
+//   body:JSON.stringify(user3),
+//   headers:{
+//     'Content-type':'application/json',
+//      Accept:'application/json',
+//      Authorization:'Bearer b5c0eb640e976d0c854a4425023a7f70cbffa9b53e8baa63855d2888f12aa535'
+//   }
+// }).then(function(patch_data){
+//   return patch_data.json()
+// }).then(function(patchjson_){
+//   console.log(patchjson_)
+// })
 
 
 
