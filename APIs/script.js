@@ -1,18 +1,31 @@
 // HOW TO GET DATA FROM API
-// fetch("https://gorest.co.in/public/v2/users ")
-// .then(function(response){
-//     return response.json()
-// })
-//   .then(function(data) {
-//     console.log(data);        // Handle the JSON data
-//   })
+let container=document.getElementById('apidata')
+fetch("https://gorest.co.in/public/v2/users ")
+.then(function(response){
+    return response.json()
+})
+  .then(function(data) {
+    console.log(data);        // Handle the JSON data
+    for(let i=0; i<data.length; i++){
+        let card=document.createElement('div')
+        card.classList='card'
+        card.innerHTML=`
+            <p>${data[i].id}</p>
+            <p>${data[i].name}</p>
+            <p>${data[i].email}</p>
+            <p>${data[i].gender}</p>
+            <p>${data[i].status}</p>
+        `
+        container.appendChild(card)
+    }
+})
 
 
 // HOW TO POST DATA TO API 
 
 // let newUser_1={
 //   name:'arjun',
-//   email:'arjun123@gmail.com',
+//   email:'keriwal@gmail.com',
 //   gender:'male',
 //   status:'active'
 // }
@@ -30,8 +43,18 @@
 // })
 // .then(function(jsondata){
 //   console.log(jsondata)
-// })
 
+// let card = document.createElement('div');
+//       card.classList = 'card';
+//       card.innerHTML = `
+//           <p>ID: ${jsondata.id}</p>
+//           <p>Name: ${jsondata.name}</p>
+//           <p>Email: ${jsondata.email}</p>
+//           <p>Gender: ${jsondata.gender}</p>
+//           <p>Status: ${jsondata.status}</p>
+//       `;
+//       container.appendChild(card);
+//     });
 
 
 //how to update an API
@@ -40,7 +63,7 @@
 //   name:'Ayeshaa',
 // }
 
-// fetch('https://gorest.co.in/public/v2/users/8096911',{
+// fetch('https://gorest.co.in/public/v2/users/8098388',{
 //   method:'PUT',       //it is used to update one field
 //   body:JSON.stringify(user2),
 //   headers:{
