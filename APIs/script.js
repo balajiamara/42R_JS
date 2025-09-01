@@ -1,6 +1,12 @@
 // HOW TO GET DATA FROM API
 let container=document.getElementById('apidata')
-fetch("https://gorest.co.in/public/v2/users ")
+fetch("https://gorest.co.in/public/v2/users ",{
+  method:'GET',
+  headers:{
+    Authorization:'Bearer b5c0eb640e976d0c854a4425023a7f70cbffa9b53e8baa63855d2888f12aa535'
+  }
+})
+
 .then(function(response){
     return response.json()
 })
@@ -24,8 +30,8 @@ fetch("https://gorest.co.in/public/v2/users ")
 // HOW TO POST DATA TO API 
 
 // let newUser_1={
-//   name:'arjun',
-//   email:'keriwal@gmail.com',
+//   name:'andesh',
+//   email:'dh@gmail.com',
 //   gender:'male',
 //   status:'active'
 // }
@@ -53,17 +59,17 @@ fetch("https://gorest.co.in/public/v2/users ")
 //           <p>Gender: ${jsondata.gender}</p>
 //           <p>Status: ${jsondata.status}</p>
 //       `;
-//       container.appendChild(card);
-//     });
+    //   container.appendChild(card);
+    // });
 
 
 //how to update an API
 
 // let user2={
-//   name:'Ayeshaa',
+//   name:'kohli',
 // }
 
-// fetch('https://gorest.co.in/public/v2/users/8098388',{
+// fetch('https://gorest.co.in/public/v2/users/8099654',{
 //   method:'PUT',       //it is used to update one field
 //   body:JSON.stringify(user2),
 //   headers:{
@@ -81,32 +87,32 @@ fetch("https://gorest.co.in/public/v2/users ")
 
 // HOW TO PATCH(CHANGE MULTIPLE DATA ONCE) DATA IN API
 
-// let user3={
-//   name:'Hardik Pandya',
-//   email:'hardik33@gmail.com',
-//   gender:'Male',
-//   status:'active'
-// }
-// fetch('https://gorest.co.in/public/v2/users/8096909',{
-//   method:'PATCH',     // IT IS USED TO UPDATE MULTIPLE FIELD
-//   body:JSON.stringify(user3),
-//   headers:{
-//     'Content-type':'application/json',
-//      Accept:'application/json',
-//      Authorization:'Bearer b5c0eb640e976d0c854a4425023a7f70cbffa9b53e8baa63855d2888f12aa535'
-//   }
-// }).then(function(patch_data){
-//   return patch_data.json()
-// }).then(function(patchjson_){
-//   console.log(patchjson_)
-// })
+let user_3={
+  name:'Hardik Pandya',
+  email:`hardikk33${Date.now()}@gmail.com`,
+  gender:'male',
+  status:'active',
+}
+fetch('https://gorest.co.in/public/v2/users/8099645',{
+  method:'PATCH',     // IT IS USED TO UPDATE MULTIPLE FIELD
+  body:JSON.stringify(user_3),
+  headers:{
+    'Content-type':'application/json',
+     Accept:'application/json',
+     Authorization:'Bearer b5c0eb640e976d0c854a4425023a7f70cbffa9b53e8baa63855d2888f12aa535'
+  }
+}).then(function(patch_data){
+  return patch_data.json()
+}).then(function(patchjson_){
+  console.log(patchjson_)
+})
 
 
 
 // HOW TO DELETE DATA FROM API
 // FOR DELETION NO NEED TO WRITE BODY, CONTENT-TYPE BECAUSE WS DON'T HAVE TO PROVIDE ANY USER DATA
 
-// fetch('https://gorest.co.in/public/v2/users/8096913',{
+// fetch('https://gorest.co.in/public/v2/users/8099658',{
 //   method:'DELETE',
 //   headers:{
 //     Accept:'application/json',
