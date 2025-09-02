@@ -87,25 +87,25 @@ fetch("https://gorest.co.in/public/v2/users ",{
 
 // HOW TO PATCH(CHANGE MULTIPLE DATA ONCE) DATA IN API
 
-let user_3={
-  name:'Hardik Pandya',
-  email:`hardikk33${Date.now()}@gmail.com`,
-  gender:'male',
-  status:'active',
-}
-fetch('https://gorest.co.in/public/v2/users/8099645',{
-  method:'PATCH',     // IT IS USED TO UPDATE MULTIPLE FIELD
-  body:JSON.stringify(user_3),
-  headers:{
-    'Content-type':'application/json',
-     Accept:'application/json',
-     Authorization:'Bearer b5c0eb640e976d0c854a4425023a7f70cbffa9b53e8baa63855d2888f12aa535'
-  }
-}).then(function(patch_data){
-  return patch_data.json()
-}).then(function(patchjson_){
-  console.log(patchjson_)
-})
+// let user_3={
+//   name:'Hardik Pandya',
+//   email:`hardikk33${Date.now()}@gmail.com`,
+//   gender:'male',
+//   status:'active',
+// }
+// fetch('https://gorest.co.in/public/v2/users/8099646',{
+//   method:'PATCH',     // IT IS USED TO UPDATE MULTIPLE FIELD
+//   body:JSON.stringify(user_3),
+//   headers:{
+//     'Content-type':'application/json',
+//      Accept:'application/json',
+//      Authorization:'Bearer b5c0eb640e976d0c854a4425023a7f70cbffa9b53e8baa63855d2888f12aa535'
+//   }
+// }).then(function(patch_data){
+//   return patch_data.json()
+// }).then(function(patchjson_){
+//   console.log(patchjson_)
+// })
 
 
 
