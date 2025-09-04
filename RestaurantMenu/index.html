@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <button id="order" onclick="orderNow()">Order</button>
+    </div>
+    <div id="menu"style='display:none;'>
+        <button id="Veg" onclick="Veg()">Veg</button>
+        <button id="NVeg" onclick="NonVeg()">Non-Veg</button>
+        <div id="vmenu" style='display:none;'></div>
+        <div id="nvmenu" style='display:none;'></div>
+        <div id="orderr"></div>
+        <button id="placeOrdBtn" onclick="placeFinalOrd()">Place Order</button>
+    </div>
+    <div id="finalOrder">
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
