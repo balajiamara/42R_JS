@@ -1,12 +1,12 @@
 let order=document.querySelector('#order');
 let veg=document.getElementById('Veg');
 let Nveg=document.querySelector('#NVeg');
-let vmenu=['paneer','potato','biryani','curd']
-let nvmenu=['chicken','prawns','fish','mutton','k']
+let vmenu=['PANEER BIRYANI','MUSHROOM BIRYANI','PANEER MUGHALAI','SPECIAL VEG BIRYANI','MIXED VEG BIRYANI']
+let nvmenu=['CHICKEN DUM BIRYANI','PRAWN BIRYANI','CHICKEN MUGHALAI','MUTTON BIRYANI','MIXED BIRYANI']
 let orderedItems=[];
 
 function orderNow(){
-    order.style.display='none';
+    container1.style.display='none';
     document.getElementById('menu').style.display='block';
 
 }
@@ -34,6 +34,7 @@ function Veg(){
     });
     const switchBtn = document.createElement('button');
     switchBtn.innerText = 'Go to Non-Veg Menu';
+    switchBtn.className = 'switch-btn';
     switchBtn.onclick = NonVeg;
     vmenudiv.appendChild(document.createElement('br'));
     vmenudiv.appendChild(switchBtn);
@@ -64,6 +65,7 @@ function NonVeg(){
 
     const switchBtn = document.createElement('button');
     switchBtn.innerText = 'Go to Veg Menu';
+    switchBtn.className = 'switch-btn';
     switchBtn.onclick = Veg;
     nvmenudiv.appendChild(document.createElement('br'));
     nvmenudiv.appendChild(switchBtn);
@@ -85,11 +87,15 @@ function placeFinalOrd(){
     document.getElementById('placeOrdBtn').style.display = 'none';
 
     const finalDiv=document.getElementById('finalOrder');
+
+    finalDiv.style.display = 'block';
+
     if (orderedItems.length>0){
         finalDiv.innerHTML=`
         <h3> Your Final Order:</h3>
         <ul>${orderedItems.map(item=>`<li>${item}</li>`).join('')}</ul>
-        <h4> Thanks for Ordering!</h4>
+        <h3> Thanks for Ordering!</h3>
+        <h2>May your plate be full and your heart even fuller — until we spice it up again!</h2>
         `;
     }else{
         finalDiv.innerHTML=`<h4>No items were Selected.</h4>`;
