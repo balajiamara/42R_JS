@@ -1,49 +1,92 @@
- let players=[{name:'balu',color:'blue',score:0},{name:'srinu',color:'red',score:0},{name:'subbu',color:'yellow',score:0},{name:'pp',color:'green',score:0},]
+let players = [
+    { name: 'balu', color: 'blue', score: 0 },
+    { name: 'srinu', color: 'red', score: 0 },
+    { name: 'subbu', color: 'yellow', score: 0 },
+    { name: 'pp', color: 'green', score: 0 },
+];
 
-let h1_element = document.createElement('h1')
-h1_element.textContent='Snake And Ladder'
-h1_element.classList='heading'
-// h1_element.id='heading'
-document.body.appendChild(h1_element)
+let h1_element = document.createElement('h1');
+h1_element.textContent = 'Snake And Ladder';
+h1_element.classList = 'heading';
+document.body.appendChild(h1_element);
 
-let container = document.createElement('div')
-container.classList='container'
-document.body.appendChild(container)
+// Game board container
+let container = document.createElement('div');
+container.classList = 'container';
+document.body.appendChild(container);
 
-for (let i=100; i>=1; i--){
-    let div_ele = document.createElement('div')
-    div_ele.classList='cell'
-    div_ele.id=`cell${i}`
-    div_ele.textContent = i
-    container.appendChild(div_ele)
+// Create 100 cells (100 to 1)
+for (let i = 100; i >= 1; i--) {
+    let div_ele = document.createElement('div');
+    div_ele.classList = 'cell';
+    div_ele.id = `cell${i}`;
+    div_ele.textContent = i;
+    container.appendChild(div_ele);
 }
 
-for(let i=0;i<=3;i++){
-    let btn=document.createElement('button')
-    btn.textContent=players[i].name+' '+players[i].score
-    btn.style.backgroundColor=players[i].color
-    btn.classList='btn'
-    btn.onclick=function(){
-        let randomNumber=Math.random()*6
-        randomNumber=Math.ceil(randomNumber)
-        let current_person = document.getElementById(`person${players[i].score}`)
-        if(current_person){
-            current_person.parentNode.removeChild(current_person)
+// Game state
+let currentTurn = 0;
+let gameOver = false;
+let playerButtons = [];
+
+// Create button wrapper
+let buttonWrapper = document.createElement('div');
+buttonWrapper.classList = 'buttons';
+document.body.appendChild(buttonWrapper);
+
+
+// Create player buttons
+for (let i = 0; i < players.length; i++) {
+    let btn = document.createElement('button');
+    btn.classList = 'btn';
+    btn.style.backgroundColor = players[i].color;
+    btn.innerHTML = `<sup>${players[i].name}</sup> ${players[i].score}`;
+    playerButtons.push(btn);
+
+    btn.onclick = function () {
+        if (gameOver) return;
+
+        if (currentTurn !== i) {
+            alert(`It's ${players[currentTurn].name}'s turn!`);
+            return;
         }
 
-        players[i].score=players[i].score+randomNumber
-        btn.textContent=players[i].name+' '+players[i].score
+        let dice = Math.ceil(Math.random() * 6);
 
+        // Remove old token if exists
+        let oldToken = document.getElementById(`person${players[i].score}`);
+        if (oldToken) oldToken.remove();
 
-        let person = document.createElement('div')
-        person.classList='person'
-        person.id = `person${players[i].score}`
-        person.style.backgroundColor=players[i].color
-         let parentEle=document.getElementById(`cell${players[i].score}`)
-         parentEle.appendChild(person)
-    }
+        let newScore = players[i].score + dice;
+        if (newScore <= 100) {
+            players[i].score = newScore;
+        }
 
-    
-    document.body.appendChild(btn)
+        // Update button text
+        btn.innerHTML = `<sup>${players[i].name}</sup> ${players[i].score}`;
+
+        // Add token to new cell
+        let person = document.createElement('div');
+        person.classList = 'person';
+        person.id = `person${players[i].score}`;
+        person.style.backgroundColor = players[i].color;
+
+        let cell = document.getElementById(`cell${players[i].score}`);
+        cell.appendChild(person);
+
+        // Check win
+        if (players[i].score === 100) {
+            alert(`${players[i].name} wins the game! 🎉`);
+            gameOver = true;
+            for (let b of playerButtons) b.disabled = true;
+            return;
+        }
+
+        // Next player's turn
+        currentTurn = (currentTurn + 1) % players.length;
+    };
+
+    // document.body.appendChild(btn);
+    buttonWrapper.appendChild(btn);
+
 }
-
