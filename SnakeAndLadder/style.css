@@ -2,8 +2,8 @@
 .heading {
     text-align: center;
     margin-top: 3%;
-    font-size: 2em;
-    color: white;
+    font-size: 3em;
+    color: black;
 }
 
 /* Background */
@@ -57,13 +57,13 @@ body {
 
 /* Superscript player name styling */
 .btn sup {
-    font-size: 12px;
+    font-size: 22px;
     font-weight: normal;
 }
 
 /* Hover Effects */
 .btn:hover {
-    transform: scale(1.1);
+    transform: scale(1.5);
     background-color: #fffae6;
     border-color: #222;
 }
@@ -81,12 +81,12 @@ body {
 }
 .btn:nth-child(3) { /* Bottom */
     bottom: 100px;
-    right: -180px;
+    right: -220px;
     transform: translateX(-50%);
 }
 .btn:nth-child(4) { /* Left */
     bottom: 75px;
-    left: -150px;
+    left: -240px;
     transform: translateY(-50%);
 }
 .buttons {

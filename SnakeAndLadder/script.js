@@ -1,8 +1,8 @@
 let players = [
-    { name: 'balu', color: 'blue', score: 0 },
-    { name: 'srinu', color: 'red', score: 0 },
-    { name: 'subbu', color: 'yellow', score: 0 },
-    { name: 'pp', color: 'green', score: 0 },
+    { name: 'SATISH  ', color: 'blue', score: 0 },
+    { name: 'SRINU  ', color: 'red', score: 0 },
+    { name: 'SUBBU  ', color: 'yellow', score: 0 },
+    { name: 'NARASIMHHA ', color: 'green', score: 0 },
 ];
 
 let h1_element = document.createElement('h1');
@@ -40,7 +40,7 @@ for (let i = 0; i < players.length; i++) {
     let btn = document.createElement('button');
     btn.classList = 'btn';
     btn.style.backgroundColor = players[i].color;
-    btn.innerHTML = `<sup>${players[i].name}</sup> ${players[i].score}`;
+    btn.innerHTML = `<sup>${players[i].name}</sup>${players[i].score}`;
     playerButtons.push(btn);
 
     btn.onclick = function () {
