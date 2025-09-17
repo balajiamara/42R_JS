@@ -26,11 +26,46 @@
 
 // console.log(Boolean('0'))
 
-let a=20
-let b='30'
+// let a=20
+// let b='30'
 
-console.log(a+b)
-console.log(b+a)
+// console.log(a+b)
+// console.log(b+a)
 
-arr=['subbu','srinu','prem','rammohan','abdul']
-console.log(Math.random(arr)*5)
+// arr=['subbu','srinu','prem','rammohan','abdul']
+// console.log(Math.random(arr)*5)
+
+''
+
+let randomnumber=Math.random()*100;
+randomnumber=Math.ceil(randomnumber);
+console.log(randomnumber)
+
+function guess(){
+    let num= document.getElementById('input').value
+    num=parseInt(num);
+if(isNaN(num)){
+    document.getElementById('msg').textContent='Please enter a valid Number'
+}
+else if(num>100 || num<1){
+    document.getElementById('msg').textContent='Please enter a number between 1 and 100 only'
+}
+else if(num===randomnumber){
+    document.getElementById('msg').textContent='you guess the number correctly'
+}
+else if(num>randomnumber){
+    document.getElementById('msg').textContent='your number is too high'
+}
+else{
+    document.getElementById('msg').textContent='your number is too low'
+};
+}
+
+
+
+
+// function increment(){
+//     let num=document.getElementById(val).textContent
+//     num=parseInt(num)
+
+// }
