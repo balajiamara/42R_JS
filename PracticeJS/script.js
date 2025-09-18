@@ -37,29 +37,29 @@
 
 ''
 
-let randomnumber=Math.random()*100;
-randomnumber=Math.ceil(randomnumber);
-console.log(randomnumber)
+// let randomnumber=Math.random()*100;
+// randomnumber=Math.ceil(randomnumber);
+// console.log(randomnumber)
 
-function guess(){
-    let num= document.getElementById('input').value
-    num=parseInt(num);
-if(isNaN(num)){
-    document.getElementById('msg').textContent='Please enter a valid Number'
-}
-else if(num>100 || num<1){
-    document.getElementById('msg').textContent='Please enter a number between 1 and 100 only'
-}
-else if(num===randomnumber){
-    document.getElementById('msg').textContent='you guess the number correctly'
-}
-else if(num>randomnumber){
-    document.getElementById('msg').textContent='your number is too high'
-}
-else{
-    document.getElementById('msg').textContent='your number is too low'
-};
-}
+// function guess(){
+//     let num= document.getElementById('input').value
+//     num=parseInt(num);
+// if(isNaN(num)){
+//     document.getElementById('msg').textContent='Please enter a valid Number'
+// }
+// else if(num>100 || num<1){
+//     document.getElementById('msg').textContent='Please enter a number between 1 and 100 only'
+// }
+// else if(num===randomnumber){
+//     document.getElementById('msg').textContent='you guess the number correctly'
+// }
+// else if(num>randomnumber){
+//     document.getElementById('msg').textContent='your number is too high'
+// }
+// else{
+//     document.getElementById('msg').textContent='your number is too low'
+// };
+// }
 
 
 
@@ -69,3 +69,60 @@ else{
 //     num=parseInt(num)
 
 // }
+
+let output=document.getElementById('output'),
+    reult=document.getElementById('equal');
+
+function one(){
+    
+    if (output.textContent !==''){
+        document.getElementById('output').appendChild('1');
+        console.log('hello')
+    }
+    else{
+        document.getElementById('output').value='1';
+        console.log('hi')
+    }
+}
+function two(){
+    document.getElementById('output').textContent=2;
+}
+function three(){
+    document.getElementById('output').textContent=3;
+}
+function four(){
+    document.getElementById('output').textContent=4;
+}
+function five(){
+    document.getElementById('output').textContent=5;
+}
+function six(){
+    document.getElementById('output').textContent=6;
+}
+function seven(){
+    document.getElementById('output').textContent=7;
+}
+function eight(){
+    document.getElementById('output').textContent=8;
+}
+function nine(){
+    document.getElementById('output').textContent=9;
+}
+function zero(){
+    document.getElementById('output').textContent=0;
+}
+function add(){
+    document.getElementById('output').textContent='-';
+}
+function sub(){
+    document.getElementById('output').textContent='-';
+}
+function mul(){
+    document.getElementById('output').textContent='x';
+}
+function divide(){
+    document.getElementById('output').textContent='/';
+}
+function equal(){
+    document.getElementById('output').textContent='';
+}
