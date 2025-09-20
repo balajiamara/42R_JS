@@ -48,4 +48,4 @@ window.onload = ()=>{
         ajax();
     },100);
 
-}
+};
