@@ -37,11 +37,22 @@ font-weight:bold;
 }
 input {
     padding:5px; 
+    font-size: large;
+    padding: 5px;
+    background-color: rgb(245, 210, 131);
+    color: black;
+    border: 2px solid rgb(252, 120, 5);
+    border-radius: 5px;
 }
 button { 
     margin-left:10px; 
     padding:5px 10px; 
     cursor:pointer; 
+    background-color: aliceblue;
+    color: #10b981;
+    font-size: large;
+    border-radius: 5px;
+    border: 2px solid green;
 }
 @keyframes scroll {
 from { transform:translateX(100%); }
